@@ -30,6 +30,8 @@ gem 'spina', github: 'denkGroot/Spina'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 
+gem 'dotenv-rails', '~> 2.1.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,7 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano', '~> 3.4', require: false
+  gem 'capistrano', '~> 3.6.1', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-rvm', '~> 0.1', require: false
