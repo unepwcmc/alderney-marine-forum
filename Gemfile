@@ -33,7 +33,6 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 
 gem 'dotenv-rails', '~> 2.1.1'
 
-gem 'listen', '~> 3.0.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,6 +42,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'listen', '~> 3.0.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
