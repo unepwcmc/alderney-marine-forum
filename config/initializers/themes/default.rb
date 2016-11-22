@@ -12,7 +12,7 @@
     # Text box on a grey background row
     name:           'secondary_text',
     title:          'Secondary Text Box',
-    partable_type:  'Spina::Text'
+    partable_type:  'Spina::PhotoCollection'
   }]
 
   theme.view_templates = [{
