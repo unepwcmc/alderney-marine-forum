@@ -1,3 +1,4 @@
 <h1> <%= @page.title %> </h1>
 
 <%= @page.content(:text).try(:html_safe) %>
+<%= @page.content(:secondary_text).try(:html_safe) %>

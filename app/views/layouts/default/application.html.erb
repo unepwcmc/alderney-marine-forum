@@ -6,12 +6,15 @@
     </title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'default/application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'default/application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <%= render 'default/shared/navigation' %>
+
     <div class="container">
-      <%= render 'default/shared/navigation' %>
       <%= yield %>
     </div>
+
+    <%= render 'default/shared/footer' %>
   </body>
 </html>

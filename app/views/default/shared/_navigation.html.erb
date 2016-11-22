@@ -1,6 +1,12 @@
 <% pages = current_user.present? ? Spina::Page.active : Spina::Page.live %>
 <% menu = Spina::Pages::MenuPresenter.new(pages.in_menu.arrange(order: :position), self, @page) %>
-<% menu.list_class = 'nav' %>
-<% menu.list_item_css = 'nav-item' %>
-<%= menu.to_html %>
+<% menu.list_class = 'nav navbar-nav float-xs-right' %>
+<% menu.list_item_css = 'nav-item nav-link' %>
+<% puts menu.inspect %>
 
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <%= menu.to_html %>
+  </div>
+</nav>
