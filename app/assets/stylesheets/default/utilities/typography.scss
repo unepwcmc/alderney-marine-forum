@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700,700i|PT+Sans:400,700');
+@import "default/utilities/colors";
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.938em;
+  line-height: 1.875em;
+  color: $dark_grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $marine_dark_blue;
+  font-weight: 700;
+  font-family: 'PT Sans', sans-serif;
+}
+
+a { color: $marine_green; }
+a:hover, a:focus {
+  color: $marine_dark_blue;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.editable a {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  border-bottom: 1px solid $light_green;
+  box-shadow: inset 0 -7px 0 $light_green;
+  transition: background .15s cubic-bezier(.33,.66,.66,1);
+}
+
+
+h1 {
+  font-size: 2.938em;
+}
+
+h2 {
+  font-size: 2.313em;
+}
+
+h3 {
+  font-size: 2.313em;
+}
+
+h6 {
+  font-weight: 300;
+  font-size: 1.250em;
+  line-height: 1.5em;
+}
+

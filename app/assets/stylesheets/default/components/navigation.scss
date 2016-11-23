@@ -2,4 +2,18 @@
 
 nav {
   border-bottom: 1px solid $light_grey;
+  box-shadow: 3px 0px 5px $light_grey;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-link {
+  line-height: 3em;
+  padding: 0 0.8em;
+
+  &:last-child {
+    padding-right: 0em;
+  }
 }
