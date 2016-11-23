@@ -1,14 +1,17 @@
 <% pages = current_user.present? ? Spina::Page.active : Spina::Page.live %>
 <% menu = Spina::Pages::MenuPresenter.new(pages.in_menu.arrange(order: :position), self, @page) %>
-<% menu.list_class = 'nav navbar-nav float-xs-right' %>
+<% menu.list_class = 'nav navbar-nav text-xs-left float-md-right' %>
 <% menu.list_item_css = 'nav-item nav-link' %>
 <% puts menu.inspect %>
 
 <nav class="navbar navbar-light">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <%= image_tag 'logo.png', class: 'logo' %>
-    </a>
-    <%= menu.to_html %>
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <%= image_tag 'logo.png', class: 'logo hidden-md-down' %>
+      </a>
+      <%= menu.to_html %>
+    </div>
   </div>
 </nav>
