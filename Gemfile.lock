@@ -82,7 +82,7 @@ GEM
     ancestry (2.2.2)
       activerecord (>= 3.0.0)
     arel (7.1.4)
-    autoprefixer-rails (6.5.1.1)
+    autoprefixer-rails (6.5.3)
       execjs
     bcrypt (3.1.11)
     bootstrap (4.0.0.alpha5)
@@ -139,6 +139,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    font-awesome-rails (4.7.0.0)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -196,7 +198,7 @@ GEM
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     pg (0.19.0)
-    puma (3.6.1)
+    puma (3.6.2)
     rack (2.0.1)
     rack-protection (1.5.3)
       rack
@@ -296,6 +298,7 @@ DEPENDENCIES
   capistrano-sidekiq
   coffee-rails (~> 4.2)
   dotenv-rails (~> 2.1.1)
+  font-awesome-rails (~> 4.7.0.0)
   globalize!
   jbuilder (~> 2.5)
   jquery-rails

@@ -1,0 +1,6 @@
+<div class="news-item clearfix my-2">
+  <span class="text-primary"><%= article.created_at.to_formatted_s(:long) %></span>
+  <h4><%= link_to article.title, article.materialized_path %></h4>
+  <img src="http://placehold.it/350x350" class="float-xs-right" alt="...">
+  <p><%= article.content(:text).try(:html_safe) %></p>
+</div>

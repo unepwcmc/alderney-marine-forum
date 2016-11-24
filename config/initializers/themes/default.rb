@@ -9,10 +9,14 @@
     partable_type:  'Spina::Text'
   },
   {
-    # Text box on a grey background row
-    name:           'secondary_text',
-    title:          'Secondary Text Box',
-    partable_type:  'Spina::PhotoCollection'
+    name:           'key_documents',
+    title:          'Key Documents list',
+    partable_type:  'Spina::Text'
+  },
+  {
+    name:           'meeting_minutes',
+    title:          'Meeting Minutes list',
+    partable_type:  'Spina::Text'
   }]
 
   theme.view_templates = [{
@@ -21,19 +25,46 @@
     title:      'Homepage',
     page_parts: ['text']
   }, {
-    # This is any other page, using the 'Default' template
+    name:       'about',
+    title:      'About',
+    page_parts: ['text']
+
+
+
+  }, {
     name: 'show',
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    page_parts:   ['text', 'secondary_text']
-  }]
+    page_parts:   ['text']
 
-  theme.custom_pages = [{
-    name:           'homepage',
-    title:          'Homepage',
-    deletable:      false,
-    view_template:  'homepage'
+  # FINISHED PAGES
+  }, {
+    name: 'resources',
+    title:        'Resources',
+    description:  'A place for key documents and meeting minutes',
+    usage:        'Simply add a link to the list',
+    deleteable:   false,
+    page_parts:   ['text', 'key_documents', 'meeting_minutes']
+  }, {
+    name: 'news',
+    title:        'News',
+    description:  'A list of all news stories',
+    usage:        'Use for a list of all news stories',
+    deletable:    false,
+    page_parts:   ['text']
+  }, {
+    name: 'article',
+    title:        'Article',
+    description:  'A single news story',
+    usage:        'Use for posting a new news item',
+    deletable:    false,
+    page_parts:   ['text']
   }]
-
+  #theme.custom_pages = [{
+    #name:           'homepage',
+    #title:          'Homepage',
+    #deletable:      false,
+    #view_template:  'homepage'
+  #}]
 end

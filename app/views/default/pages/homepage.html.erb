@@ -1,3 +1,51 @@
+<!-- Hero row -->
+<div class="row">
+  <%= image_tag 'hero.jpg', class: 'float-xs-left hidden-md-down hero' %>
+  <div class="col-lg-6 col-md-12 editable">
+    <%= @page.content(:text).try(:html_safe) %>
+  </div>
+</div>
+
+<!-- Banner and text row -->
+<div class="row">
+  <div class="container">
+    <div class="col-lg-6 col-md-12">
+      <h1>Latest News</h1>
+      <% @news = Spina::Page.find_by(view_template: "news") %>
+      <% @news.children.each do |child| %>
+        <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
+      <% end %>
+
+      <%= link_to 'See more news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+    <div class="col-lg-6 col-md-12 editable col-grey">
+      <h1>Key Dates</h1>
+
+      <div class="date-item my-2">
+        <h5>Meeting of the Alderney Marine Forum</h5>
+        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
+        <p>Alderney Harbour Office</p>
+      </div>
+      <div class="date-item my-2">
+        <h5>Meeting of the Alderney Marine Forum</h5>
+        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
+        <p>Alderney Harbour Office</p>
+      </div>
+      <div class="date-item my-2">
+        <h5>Meeting of the Alderney Marine Forum</h5>
+        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
+        <p>Alderney Harbour Office</p>
+      </div>
+      <div class="date-item my-2">
+        <h5>Meeting of the Alderney Marine Forum</h5>
+        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
+        <p>Alderney Harbour Office</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Banner and text row -->
 <div class="row">
   <div class="container">
     <div class="col-lg-3 col-md-0">
@@ -9,6 +57,7 @@
   </div>
 </div>
 
+<!-- Grey row alt -->
 <div class="row row-grey">
   <div class="container">
     <div class="col-lg-8 offset-lg-2 col-md-12 editable">

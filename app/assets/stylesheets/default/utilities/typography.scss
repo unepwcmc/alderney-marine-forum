@@ -30,6 +30,11 @@ a:hover, a:focus {
   border-bottom: 1px solid $light_green;
   box-shadow: inset 0 -7px 0 $light_green;
   transition: background .15s cubic-bezier(.33,.66,.66,1);
+
+  &.btn {
+    box-shadow: none;
+    transition: none;
+  }
 }
 
 
@@ -45,9 +50,31 @@ h3 {
   font-size: 2.313em;
 }
 
+// Used for news titles
+h4 {
+  color: $marine_green;
+}
+
+// Used for key dates titles
+h5 {
+
+}
+
+// Used for lead text in first paragraph of hero blocks
 h6 {
   font-weight: 300;
   font-size: 1.250em;
   line-height: 1.5em;
 }
 
+.text-primary {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: $marine_dark_blue!important;
+
+}
+
+.hr-light {
+  border: 1px solid $white;
+}
