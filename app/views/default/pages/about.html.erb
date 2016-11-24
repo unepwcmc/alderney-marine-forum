@@ -1,0 +1,20 @@
+<!-- Banner and text row -->
+<div class="row">
+  <div class="container">
+    <div class="col-lg-3 col-md-0">
+      <%= image_tag 'banner.jpg', class: 'hidden-md-down' %>
+    </div>
+    <div class="col-lg-9 col-md-12 editable">
+      <%= @page.content(:text).try(:html_safe) %>
+    </div>
+  </div>
+</div>
+
+<!-- Grey row alt -->
+<div class="row row-grey">
+  <div class="container">
+    <div class="col-lg-8 offset-lg-2 col-md-12 editable">
+      <%= @page.content(:grey_row_text).try(:html_safe) %>
+    </div>
+  </div>
+</div>

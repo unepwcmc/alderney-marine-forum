@@ -17,16 +17,17 @@
     name:           'meeting_minutes',
     title:          'Meeting Minutes list',
     partable_type:  'Spina::Text'
+  },
+  {
+    name:           'grey_row_text',
+    title:          'Grey Row Text',
+    partable_type:  'Spina::Text'
   }]
 
   theme.view_templates = [{
     # This is the 'Homepage' template
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text']
-  }, {
-    name:       'about',
-    title:      'About',
     page_parts: ['text']
 
 
@@ -39,6 +40,12 @@
     page_parts:   ['text']
 
   # FINISHED PAGES
+  }, {
+    name: 'about',
+    title:        'About',
+    description:  'About the Alderney Marine Forum',
+    deleteable:   false,
+    page_parts:   ['text', 'grey_row_text']
   }, {
     name: 'resources',
     title:        'Resources',
@@ -61,10 +68,4 @@
     deletable:    false,
     page_parts:   ['text']
   }]
-  #theme.custom_pages = [{
-    #name:           'homepage',
-    #title:          'Homepage',
-    #deletable:      false,
-    #view_template:  'homepage'
-  #}]
 end
