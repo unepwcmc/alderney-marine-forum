@@ -48,7 +48,7 @@
     # This is the 'Homepage' template
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text']
+    page_parts: ['text', 'photo']
   }, {
     name: 'show',
     title:        'Default',
@@ -74,14 +74,14 @@
     title:        'About',
     description:  'About the Alderney Marine Forum',
     deleteable:   false,
-    page_parts:   ['text', 'grey_row_text']
+    page_parts:   ['text', 'grey_row_text', 'photo']
   }, {
     name: 'resources',
     title:        'Resources',
     description:  'A place for key documents and meeting minutes',
     usage:        'Simply add a link to the list',
     deleteable:   false,
-    page_parts:   ['text', 'key_documents', 'meeting_minutes', 'useful_links']
+    page_parts:   ['text', 'key_documents', 'meeting_minutes', 'useful_links', 'photo']
   }, {
     name: 'news',
     title:        'News',
