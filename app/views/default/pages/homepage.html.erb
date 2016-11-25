@@ -12,34 +12,17 @@
     <div class="col-lg-6 col-md-12">
       <h1>Latest News</h1>
       <% @news = Spina::Page.find_by(view_template: "news") %>
-      <% @news.children.each do |child| %>
+      <% @news.children.last(2).each do |child| %>
         <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
       <% end %>
 
-      <%= link_to 'See more news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'View all news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
     </div>
     <div class="col-lg-6 col-md-12 editable col-grey">
       <h1>Key Dates</h1>
 
       <div class="date-item my-2">
-        <h5>Meeting of the Alderney Marine Forum</h5>
-        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
-        <p>Alderney Harbour Office</p>
-      </div>
-      <div class="date-item my-2">
-        <h5>Meeting of the Alderney Marine Forum</h5>
-        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
-        <p>Alderney Harbour Office</p>
-      </div>
-      <div class="date-item my-2">
-        <h5>Meeting of the Alderney Marine Forum</h5>
-        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
-        <p>Alderney Harbour Office</p>
-      </div>
-      <div class="date-item my-2">
-        <h5>Meeting of the Alderney Marine Forum</h5>
-        <span class="text-primary"><%= Date.today.to_formatted_s(:long) %></span>
-        <p>Alderney Harbour Office</p>
+        <%= @page.content(:key_dates).try(:html_safe) %>
       </div>
     </div>
   </div>
@@ -48,38 +31,26 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="container">
-      <h1><%= @page.content(:timeline_title).try(:html_safe) %></h1>
+      <h1>Alderney Marine Management Plan</h1>
 
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Date</th>
+            <th>Stage</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <% @timeline = Spina::Page.find_by(view_template: "timeline") %>
+          <% @timeline.children.last(8).each do |child| %>
+            <tr>
+              <td><%= child.content(:date).try(:html_safe) %></td>
+              <td><%= child.content(:text).try(:html_safe) %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
+      <%= link_to 'View complete timeline', @timeline.materialized_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 </div>

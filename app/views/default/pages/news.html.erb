@@ -11,16 +11,14 @@
 <div class="row">
   <div class="container">
     <div class="col-lg-8">
-      <% @page.children.last(2).each do |child| %>
+      <% @page.children.each do |child| %>
         <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
       <% end %>
     </div>
     <div class="col-lg-4 col-grey relevant-resources">
       <h5>Relevant resources</h5>
       <hr class="hr-light">
-      <%= link_to root_path do %>
-        <i class="fa fa-file-text-o"></i> Marine Plan
-      <% end %>
+      <%= @page.content(:useful_links).try(:html_safe) %>
     </div>
   </div>
 </div>

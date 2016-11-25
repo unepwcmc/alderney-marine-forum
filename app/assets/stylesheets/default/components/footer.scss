@@ -12,4 +12,8 @@ footer {
     font-size: 1em;
     font-weight: 700;
   }
+
+  a:focus, a:hover {
+    color: $marine_green;
+  }
 }

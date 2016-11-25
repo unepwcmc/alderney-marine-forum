@@ -15,6 +15,10 @@
       <h5>Meeting Minutes</h5>
       <hr>
       <%= @page.content(:meeting_minutes).try(:html_safe) %>
+
+      <h5>Useful Links</h5>
+      <hr>
+      <%= @page.content(:useful_links).try(:html_safe) %>
     </div>
   </div>
 </div>

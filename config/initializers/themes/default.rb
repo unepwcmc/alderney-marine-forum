@@ -19,14 +19,24 @@
     partable_type:  'Spina::Text'
   },
   {
-    name:           'timeline_title',
-    title:          'Timeline Title',
-    partable_type:  'Spina::Line'
+    name:           'useful_links',
+    title:          'Useful Links',
+    partable_type:  'Spina::Text'
+  },
+  {
+    name:           'key_dates',
+    title:          'Key Dates',
+    partable_type:  'Spina::Text'
   },
   {
     name:           'date',
     title:          'Date',
     partable_type:  'Spina::Line'
+  },
+  {
+    name:           'photo',
+    title:          'Photo',
+    partable_type:  'Spina::Photo'
   },
   {
     name:           'grey_row_text',
@@ -38,7 +48,7 @@
     # This is the 'Homepage' template
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text', 'timeline_title']
+    page_parts: ['text']
   }, {
     name: 'show',
     title:        'Default',
@@ -47,6 +57,12 @@
     page_parts:   ['text']
 
   # FINISHED PAGES
+  }, {
+    name: 'timeline',
+    title:        'Timeline',
+    description:  'A complete view of all the events',
+    deleteable:   false,
+    page_parts:   ['text']
   }, {
     name: 'event',
     title:        'Event',
@@ -65,20 +81,20 @@
     description:  'A place for key documents and meeting minutes',
     usage:        'Simply add a link to the list',
     deleteable:   false,
-    page_parts:   ['text', 'key_documents', 'meeting_minutes']
+    page_parts:   ['text', 'key_documents', 'meeting_minutes', 'useful_links']
   }, {
     name: 'news',
     title:        'News',
     description:  'A list of all news stories',
     usage:        'Use for a list of all news stories',
     deletable:    false,
-    page_parts:   ['text']
+    page_parts:   ['text', 'useful_links']
   }, {
     name: 'article',
     title:        'Article',
     description:  'A single news story',
     usage:        'Use for posting a new news item',
     deletable:    false,
-    page_parts:   ['text']
+    page_parts:   ['text', 'photo']
   }]
 end

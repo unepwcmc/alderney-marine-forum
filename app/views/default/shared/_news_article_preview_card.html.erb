@@ -1,6 +1,11 @@
 <div class="news-item clearfix my-2">
-  <span class="text-primary"><%= article.created_at.to_formatted_s(:long) %></span>
+  <span class="text-primary"><%= article.created_at.strftime('%e %B %Y') %></span>
   <h4><%= link_to article.title, article.materialized_path %></h4>
-  <img src="http://placehold.it/350x350" class="float-xs-right" alt="...">
+
+  <% if article.content(:photo).nil? %>
+  <% else %>
+    <%= image_tag article.content(:photo).file.thumb, class: "float-xs-right" %>
+  <% end %>
+
   <p><%= article.content(:text).try(:html_safe) %></p>
 </div>
