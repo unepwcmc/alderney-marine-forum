@@ -19,6 +19,16 @@
     partable_type:  'Spina::Text'
   },
   {
+    name:           'timeline_title',
+    title:          'Timeline Title',
+    partable_type:  'Spina::Line'
+  },
+  {
+    name:           'date',
+    title:          'Date',
+    partable_type:  'Spina::Line'
+  },
+  {
     name:           'grey_row_text',
     title:          'Grey Row Text',
     partable_type:  'Spina::Text'
@@ -28,10 +38,7 @@
     # This is the 'Homepage' template
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text']
-
-
-
+    page_parts: ['text', 'timeline_title']
   }, {
     name: 'show',
     title:        'Default',
@@ -40,6 +47,12 @@
     page_parts:   ['text']
 
   # FINISHED PAGES
+  }, {
+    name: 'event',
+    title:        'Event',
+    description:  'Add an event to the calendar',
+    deleteable:   false,
+    page_parts:   ['date', 'text']
   }, {
     name: 'about',
     title:        'About',

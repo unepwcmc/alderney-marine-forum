@@ -11,7 +11,7 @@
 <div class="row">
   <div class="container">
     <div class="col-lg-8">
-      <% @page.children.each do |child| %>
+      <% @page.children.last(2).each do |child| %>
         <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
       <% end %>
     </div>
