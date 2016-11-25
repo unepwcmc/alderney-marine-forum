@@ -12,11 +12,15 @@
     <div class="col-lg-6 col-md-12">
       <h1>Latest News</h1>
       <% @news = Spina::Page.find_by(view_template: "news") %>
-      <% @news.children.last(2).each do |child| if @news.children.any? %>
-        <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
-      <% end %>
+      <% if @news.children.any? %>
+        <% @news.children.last(2).each do |child| %>
+          <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
+        <% end %>
 
-      <%= link_to 'View all news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'View all news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
+      <% else %>
+        <p>There is no news yet, please check back soon</p>
+      <% end %>
     </div>
     <div class="col-lg-6 col-md-12 editable col-grey">
       <h1>Key Dates</h1>
@@ -33,24 +37,28 @@
     <div class="container">
       <h1>Alderney Marine Management Plan</h1>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Stage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @timeline = Spina::Page.find_by(view_template: "timeline") %>
-          <% @timeline.children.last(8).each do |child| if @timeline.children.any? %>
+      <% @timeline = Spina::Page.find_by(view_template: "timeline") %>
+      <% if @timeline.children.any? %>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td><%= child.content(:date).try(:html_safe) %></td>
-              <td><%= child.content(:text).try(:html_safe) %></td>
+              <th>Date</th>
+              <th>Stage</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'View complete timeline', @timeline.materialized_path, class: 'btn btn-lg btn-primary' %>
+          </thead>
+          <tbody>
+            <% @timeline.children.last(8).each do |child| %>
+              <tr>
+                <td><%= child.content(:date).try(:html_safe) %></td>
+                <td><%= child.content(:text).try(:html_safe) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'View complete timeline', @timeline.materialized_path, class: 'btn btn-lg btn-primary' %>
+      <% else %>
+        <p>There are no events yet, please check back soon</p>
+      <% end %>
     </div>
   </div>
 </div>

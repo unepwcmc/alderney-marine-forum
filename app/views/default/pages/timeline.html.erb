@@ -4,22 +4,26 @@
       <h1>Alderney Marine Management Plan</h1>
       <h6> <%= @page.content(:text).try(:html_safe) %> </h6>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Stage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @page.children.last(8).each do |child| %>
+      <% if @page.children.any? %>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td><%= child.content(:date).try(:html_safe) %></td>
-              <td><%= child.content(:text).try(:html_safe) %></td>
+              <th>Date</th>
+              <th>Stage</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @page.children.last(8).each do |child| %>
+              <tr>
+                <td><%= child.content(:date).try(:html_safe) %></td>
+                <td><%= child.content(:text).try(:html_safe) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>There are no events right now, please check back soon</p>
+      <% end %>
     </div>
   </div>
 </div>
