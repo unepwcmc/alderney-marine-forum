@@ -48,7 +48,7 @@
     # This is the 'Homepage' template
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text', 'photo']
+    page_parts: ['text', 'key_dates', 'photo']
   }, {
     name: 'show',
     title:        'Default',
