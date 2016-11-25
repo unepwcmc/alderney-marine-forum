@@ -12,7 +12,7 @@
     <div class="col-lg-6 col-md-12">
       <h1>Latest News</h1>
       <% @news = Spina::Page.find_by(view_template: "news") %>
-      <% @news.children.last(2).each do |child| %>
+      <% @news.children.last(2).each do |child| if @news.children.any? %>
         <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
       <% end %>
 
@@ -42,7 +42,7 @@
         </thead>
         <tbody>
           <% @timeline = Spina::Page.find_by(view_template: "timeline") %>
-          <% @timeline.children.last(8).each do |child| %>
+          <% @timeline.children.last(8).each do |child| if @timeline.children.any? %>
             <tr>
               <td><%= child.content(:date).try(:html_safe) %></td>
               <td><%= child.content(:text).try(:html_safe) %></td>
