@@ -4,7 +4,7 @@
 
   <% if article.content(:photo).nil? %>
   <% else %>
-    <%= image_tag article.content(:photo).file.thumb, class: "float-xs-left" %>
+    <%= image_tag article.content(:photo).file.thumb, class: "float-xs-right" %>
   <% end %>
 
   <p><%= article.content(:text).try(:html_safe) %></p>
