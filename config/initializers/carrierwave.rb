@@ -3,7 +3,6 @@ CarrierWave.configure do |config|
 
   # Use S3 if you want
   config.storage = :fog
-  config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider:               'AWS',
     #region:                 'us-east-1',
