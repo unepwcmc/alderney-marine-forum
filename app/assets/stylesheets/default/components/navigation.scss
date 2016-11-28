@@ -11,9 +11,14 @@ nav {
 
 .nav-link {
   line-height: 3em;
-  padding: 0 0.8em;
+  width: 90px;
+  text-align: center;
 
   &:last-child {
-    padding-right: 0em;
+  //  padding-right: 0em;
   }
+
+  a:hover, a:focus {
+  }
+
 }
