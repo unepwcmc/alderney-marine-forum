@@ -8,6 +8,8 @@ CarrierWave.configure do |config|
     #region:                 'us-east-1',
     aws_access_key_id:      ENV["AWS_ACCESS_KEY"],
     aws_secret_access_key:  ENV["AWS_SECRET_KEY"],
+    host:                  's3.amazonaws.com',             # optional, defaults to nil
+    endpoint:              'https://s3.amazonaws.com'
   }
   config.fog_directory  = 'alderney.cms.images'
   config.fog_public     = true
