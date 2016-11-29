@@ -1,11 +1,17 @@
-<div class="news-item clearfix my-2">
-  <span class="text-primary"><%= article.created_at.strftime('%e %B %Y') %></span>
-  <h4><%= link_to article.title, article.materialized_path %></h4>
-
-  <% if article.content(:photo).nil? %>
-  <% else %>
-    <%= image_tag article.content(:photo).file.thumb, class: "float-xs-right" %>
-  <% end %>
-
-  <p><%= article.content(:text).try(:html_safe) %></p>
+<div class="news-item my-2">
+  <div class="media">
+    <% if article.content(:photo).nil? %>
+    <% else %>
+      <div class="media-left">
+        <%= link_to article.materialized_path do %>
+          <%= image_tag article.content(:photo).file.thumb, class: 'media-object' %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="media-body">
+      <span class="text-primary"><%= article.created_at.strftime('%e %B %Y') %></span>
+      <h4 class="media-heading"><%= link_to article.title, article.materialized_path %></h4>
+      <p><%= article.content(:text).try(:html_safe) %></p>
+    </div>
+  </div>
 </div>
