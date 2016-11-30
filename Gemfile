@@ -32,6 +32,7 @@ gem 'activemodel-serializers-xml'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'font-awesome-rails', '~> 4.7.0.0'
 gem 'dotenv-rails', '~> 2.1.1'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem "fog-aws"
 
 # Use Capistrano for deployment
