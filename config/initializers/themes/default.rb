@@ -56,7 +56,12 @@
     usage:        'Use for your content',
     page_parts:   ['text']
 
-  # FINISHED PAGES
+  }, {
+    name: 'contact',
+    title: 'Contact',
+    description: 'A simple contact us form',
+    deletable: false,
+    page_parts: ['text']
   }, {
     name: 'timeline',
     title:        'Timeline',

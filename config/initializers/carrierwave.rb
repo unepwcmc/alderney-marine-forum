@@ -2,7 +2,6 @@ CarrierWave.configure do |config|
   #config.storage = :file
 
   # Use S3 if you want
-  config.storage = :fog
   config.fog_credentials = {
     provider:               'AWS',
     #region:                 'us-east-1',
@@ -14,6 +13,7 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'alderney.cms.images'
   config.fog_public     = true
   config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' }
+  config.storage = :fog
 
   config.enable_processing = !Rails.env.test?
 end
