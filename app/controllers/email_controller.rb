@@ -7,7 +7,9 @@ class EmailController < ApplicationController
 
     ContactMailer.enquiry(name, email, subject, message).deliver_later
 
-    # Add flash
-    render #WHAT SON!?
+    render 'thank_you'
+  end
+
+  def thank_you
   end
 end
