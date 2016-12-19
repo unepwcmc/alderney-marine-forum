@@ -6,7 +6,6 @@ class ContactMailer < ApplicationMailer
     mail(
       to: @@enquiry_email,
       subject: subject,
-      from: email,
       reply_to: email
     )
   end
