@@ -5,8 +5,7 @@ class EmailController < ApplicationController
     subject   = params["subject"]
     message   = params["message"]
 
-    ContactMailer.enquiry(name, email, subject, message).deliver_later
-
+    ContactMailer.enquiry(name, email, subject, message).deliver_now
     render 'thank_you'
   end
 
