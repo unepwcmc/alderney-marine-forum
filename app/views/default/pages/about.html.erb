@@ -11,10 +11,12 @@
 </div>
 
 <!-- Grey row alt -->
-<div class="row row-grey">
-  <div class="container">
-    <div class="col-lg-8 offset-lg-2 col-md-12 editable">
-      <%= @page.content(:grey_row_text).try(:html_safe) %>
+<% if @page.content(:grey_row_text).try(:html_safe).present? %>
+  <div class="row row-grey">
+    <div class="container">
+      <div class="col-lg-8 offset-lg-2 col-md-12 editable">
+        <%= @page.content(:grey_row_text).try(:html_safe) %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
