@@ -1,3 +1,14 @@
+set :stage, :production
+
+
+server "web-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
+
+set :application, "alderney-marine-forum"
+set :server_name, "alderney-marine-forum.web-production.linode.unep-wcmc.org"
+set :sudo_user, "wcmc"
+set :app_port, "80"
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

@@ -37,6 +37,8 @@ gem 'fog', require: 'fog/aws'
 gem 'letter_opener'
 
 
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
