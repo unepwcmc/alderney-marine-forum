@@ -102,4 +102,10 @@
     deletable:    false,
     page_parts:   ['text', 'photo']
   }]
+  theme.custom_pages = [{
+    name:           'homepage',
+    title:          'Homepage',
+    deletable:      false,
+    view_template:  'homepage'
+  }]
 end
