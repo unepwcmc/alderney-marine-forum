@@ -46,10 +46,10 @@
 
   theme.view_templates = [{
     # This is the 'Homepage' template
-    name:       'homepage',
-    title:      'Homepage',
-    page_parts: ['text', 'key_dates', 'photo']
-  }, {
+    #name:       'homepage',
+    #title:      'Homepage',
+    #page_parts: ['text', 'key_dates', 'photo']
+  #}, {
     name: 'show',
     title:        'Default',
     description:  'A simple page',
@@ -102,10 +102,12 @@
     deletable:    false,
     page_parts:   ['text', 'photo']
   }]
+
   theme.custom_pages = [{
     name:           'homepage',
     title:          'Homepage',
     deletable:      false,
-    view_template:  'homepage'
+    view_template:  'homepage',
+    page_parts: ['text', 'key_dates', 'photo']
   }]
 end
