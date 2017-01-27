@@ -4,20 +4,20 @@
       <%= image_tag @page.content(:photo).file.url, class: "hidden-md-down banner" %>
     </div>
     <div class="col-lg-9 col-md-12 editable">
+      <%= @page.content(:text).try(:html_safe) %>
       <div class="row">
-        <%= @page.content(:text).try(:html_safe) %>
+        <h5>Key Documents</h5>
+        <hr>
+        <%= @page.content(:key_documents).try(:html_safe) %>
+
+        <h5>Action Notes</h5>
+        <hr>
+        <%= @page.content(:meeting_minutes).try(:html_safe) %>
+
+        <h5>Useful Links</h5>
+        <hr>
+        <%= @page.content(:useful_links).try(:html_safe) %>
       </div>
-      <h5>Key Documents</h5>
-      <hr>
-      <%= @page.content(:key_documents).try(:html_safe) %>
-
-      <h5>Action Notes</h5>
-      <hr>
-      <%= @page.content(:meeting_minutes).try(:html_safe) %>
-
-      <h5>Useful Links</h5>
-      <hr>
-      <%= @page.content(:useful_links).try(:html_safe) %>
     </div>
   </div>
 </div>
