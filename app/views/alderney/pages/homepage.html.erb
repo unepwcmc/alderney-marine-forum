@@ -10,7 +10,7 @@
 <div class="row">
   <div class="container">
     <div class="col-lg-6 col-md-12">
-      <h1>Latest News</h1>
+      <h2>Latest News</h2>
       <% @news = Spina::Page.find_by(view_template: "news") %>
       <% if @news.children.any? %>
         <% @news.children.last(2).each do |child| %>
@@ -23,7 +23,7 @@
       <% end %>
     </div>
     <div class="col-lg-6 col-md-12 editable col-grey">
-      <h1>Key Dates</h1>
+      <h2>Key Dates</h2>
 
       <div class="date-item my-2">
         <%= @page.content(:key_dates).try(:html_safe) %>
@@ -35,7 +35,7 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="container">
-      <h1>Alderney Marine Management Plan</h1>
+      <h2>Alderney Marine Management Plan</h2>
 
       <% @timeline = Spina::Page.find_by(view_template: "timeline") %>
       <% if @timeline.children.any? %>
