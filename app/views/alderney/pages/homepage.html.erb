@@ -1,6 +1,6 @@
 <!-- Hero row -->
 <div class="row">
-  <%= image_tag @page.content(:photo) ? @page.content(:photo).file.url : 'http://placehold.it/500x500', class: "float-xs-left hidden-md-down hero" %>
+  <%= image_tag @page.content(:photo).file.url, class: "float-xs-left hidden-md-down hero" %>
   <div class="col-lg-6 col-md-12 editable">
     <%= @page.content(:text).try(:html_safe) %>
   </div>
@@ -14,7 +14,7 @@
       <% @news = Spina::Page.find_by(view_template: "news") %>
       <% if @news.children.any? %>
         <% @news.children.last(2).each do |child| %>
-          <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
+          <%= render partial: 'alderney/shared/news_article_preview_card', locals: { article: child } %>
         <% end %>
 
         <%= link_to 'View all news', @news.materialized_path, class: 'btn btn-lg btn-primary' %>
