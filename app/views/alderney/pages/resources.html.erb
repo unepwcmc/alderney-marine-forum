@@ -5,8 +5,7 @@
     </div>
     <div class="col-lg-9 col-md-12 editable">
       <div class="row">
-        <h2> <%= @page.title %> </h2>
-        <h6> <%= @page.content(:text).try(:html_safe) %> </h6>
+        <%= @page.content(:text).try(:html_safe) %>
       </div>
       <h5>Key Documents</h5>
       <hr>
