@@ -13,7 +13,7 @@
     <div class="col-lg-8">
       <% if @page.children.any? %>
         <% @page.children.each do |child| %>
-          <%= render partial: 'default/shared/news_article_preview_card', locals: { article: child } %>
+          <%= render partial: 'alderney/shared/news_article_preview_card', locals: { article: child } %>
         <% end %>
       <% else %>
         <p>There is no new yet, please check back soon</p>

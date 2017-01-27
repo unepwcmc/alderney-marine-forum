@@ -1,6 +1,6 @@
 <!-- Hero row -->
 <div class="row">
-  <%= image_tag @page.content(:photo).file.url, class: "float-xs-left hidden-md-down hero" %>
+  <%= image_tag @page.content(:photo) ? @page.content(:photo).file.url : 'http://placehold.it/500x500', class: "float-xs-left hidden-md-down hero" %>
   <div class="col-lg-6 col-md-12 editable">
     <%= @page.content(:text).try(:html_safe) %>
   </div>
