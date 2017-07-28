@@ -42,12 +42,17 @@
     name:           'grey_row_text',
     title:          'Grey Row Text',
     partable_type:  'Spina::Text'
+  },
+  {
+    name:           'html',
+    title:          'HTML',
+    partable_type:  'Spina::Html'
   }]
 
   theme.view_templates = [{
     name:       'homepage',
     title:      'Homepage',
-    page_parts: ['text', 'key_dates', 'photo']
+    page_parts: ['text', 'key_dates', 'photo', 'html']
   }, {
     name: 'show',
     title:        'Default',
