@@ -25,6 +25,8 @@
           <%= text_area_tag :message, nil, rows: 6, class: 'form-control' %>
         </div>
 
+  <%= recaptcha_tags %>
+
         <%= submit_tag "Send", class: 'btn btn-primary' %>
       <% end %>
 

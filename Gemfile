@@ -35,7 +35,7 @@ gem 'dotenv-rails', '~> 2.1.1'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'fog', require: 'fog/aws'
 gem 'letter_opener'
-
+gem "recaptcha", require: "recaptcha/rails"
 
 
 
